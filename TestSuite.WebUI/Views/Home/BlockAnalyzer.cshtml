@@ -1,0 +1,45 @@
+@model IEnumerable<TestSuite.Common.Models.BlockAnalyzer>
+
+@{
+    ViewData["Title"] = "BlockAnalyzer";
+}
+
+<h1>BlockAnalyzer</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BlockName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Errors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Warnings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Summary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BlockName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Errors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Warnings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

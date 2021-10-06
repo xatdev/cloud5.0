@@ -1,0 +1,12 @@
+image: mcr.microsoft.com/dotnet/sdk:latest
+
+build:
+  stage: build
+  script:
+    - dotnet restore TestSuiteCloud5.0.sln --source https://artifactory.siemens.net/artifactory/api/nuget/v3/nuget-remote
+    - dotnet build TestSuiteCloud5.0.sln --no-restore
+
+test:
+  stage: test
+  script:
+    - dotnet test ./_Test/Test_TestSuiteCloud5.0.sln --no-restore

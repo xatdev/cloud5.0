@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>
+@using (Html.BeginForm("BlockAnalyzer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="formFile" />
+    <input type="submit" value="Analyze block..." />
+}
+</p>
+
+<p>
+<a href="/Home/Weather">GET - Weather data </a>
+</p>
